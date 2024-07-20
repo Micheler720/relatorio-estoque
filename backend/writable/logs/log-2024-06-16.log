@@ -1,0 +1,86 @@
+CRITICAL - 2024-06-16 20:14:37 --> ErrorException: Undefined property: App\Controllers\Api\RelatorioDespesas::$failValidationError
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/BaseController.php on line 65.
+ 1 APPPATH/Controllers/BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Api\\RelatorioDespesas::$failValidationError', '/var/www/html/app/Controllers/BaseController.php', 65)
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(26): App\Controllers\BaseController->badrequest_response([...])
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-16 20:18:36 --> ErrorException: Undefined property: App\Controllers\Api\RelatorioDespesas::$fail
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/BaseController.php on line 66.
+ 1 APPPATH/Controllers/BaseController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Api\\RelatorioDespesas::$fail', '/var/www/html/app/Controllers/BaseController.php', 66)
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(26): App\Controllers\BaseController->badrequest_response([...])
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-16 20:21:09 --> ErrorException: Undefined property: App\Controllers\Api\RelatorioDespesas::$respond
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/BaseController.php on line 66.
+ 1 APPPATH/Controllers/BaseController.php(66): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Api\\RelatorioDespesas::$respond', '/var/www/html/app/Controllers/BaseController.php', 66)
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(26): App\Controllers\BaseController->badrequest_response([...])
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-16 20:21:36 --> Error: Call to undefined method App\Controllers\Api\RelatorioDespesas::fail()
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/BaseController.php on line 66.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(26): App\Controllers\BaseController->badrequest_response([...])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-16 20:21:37 --> Error: Call to undefined method App\Controllers\Api\RelatorioDespesas::fail()
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/BaseController.php on line 66.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(26): App\Controllers\BaseController->badrequest_response([...])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-16 20:38:17 --> TypeError: App\Controllers\BaseController::failValidationError(): Argument #1 ($description) must be of type string, array given, called in /var/www/html/app/Controllers/BaseController.php on line 68
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/API/ResponseTrait.php on line 234.
+ 1 APPPATH/Controllers/BaseController.php(68): App\Controllers\BaseController->failValidationError([...])
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(20): App\Controllers\BaseController->internalError_response([...])
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-16 20:38:31 --> TypeError: App\Controllers\BaseController::failValidationError(): Argument #1 ($description) must be of type string, array given, called in /var/www/html/app/Controllers/BaseController.php on line 68
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/API/ResponseTrait.php on line 234.
+ 1 APPPATH/Controllers/BaseController.php(68): App\Controllers\BaseController->failValidationError([...])
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(20): App\Controllers\BaseController->internalError_response([...])
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-16 20:38:37 --> TypeError: App\Controllers\BaseController::failValidationError(): Argument #1 ($description) must be of type string, array given, called in /var/www/html/app/Controllers/BaseController.php on line 68
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/API/ResponseTrait.php on line 234.
+ 1 APPPATH/Controllers/BaseController.php(68): App\Controllers\BaseController->failValidationError([...])
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(20): App\Controllers\BaseController->internalError_response([...])
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_app
+    mem_limit: 512m
+    cpu_shares: 1024
+    ports:
+      - '80:80'
+      - '88:88'
+    volumes:
+      - ./backend:/var/www/html
+      - ./docker/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - ./docker/php/sites-enabled.conf:/etc/apache2/sites-enabled/sites-enabled.conf
+      # - ./docker/php.ini:/usr/local/etc/php/conf.d/custom.ini
+    depends_on:
+      - mysqldb
+    links:
+      - mysqldb
+
+  mysqldb:
+    container_name: mysql_app
+    image: mysql:5.7
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./docker/db:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: sglinx
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: \@2013linear
+      MYSQL_ROOT_PASSWORD: root
+  

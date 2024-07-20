@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #EBEBEB;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+    font-size: .7rem;
+}
+
+:-moz-placeholder {
+    font-style: italic;
+    font-size: .7rem;
+}
+
+::-moz-placeholder {
+    font-style: italic;
+    font-size: .7rem;
+}
+
+:-ms-input-placeholder {
+    font-style: italic;
+    font-size: .7rem;
+}
+
+.MuiInputBase-formControl.MuiInputBase-adornedEnd > .MuiInputBase-input.MuiOutlinedInput-input{
+    padding-top:10px!important;
+    padding-bottom:10px!important;
+}
+
+.MuiFormLabel-root.MuiInputLabel-root.MuiInputLabel-formControl {
+    background: #fff;
+    padding-right: 4px;
+    transform: translate(14px, -6px) scale(0.75);
+    --webkit-transform: translate(14px, -6px) scale(0.75);
+}
+
+ .MuiOutlinedInput-notchedOutline legend {
+  overflow: visible;
+  transform: translate(0px, -4px)
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root > .MuiOutlinedInput-notchedOutline legend span {
+  opacity: 1;
+  visibility: visible;
+  overflow: unset;
+  font-family: sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #fff;
+}
+
+
+.MuiInputBase-root.MuiOutlinedInput-root.Mui-focused > .MuiOutlinedInput-notchedOutline legend span
+{
+    color: rgba(0, 0, 0, 0.6);
+    
+}
+
+.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-jedpe8-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    padding-top: 10px;
+}
+
+
+
+::-ms-reveal {
+    display: none;
+}

@@ -1,0 +1,1033 @@
+CRITICAL - 2024-06-14 09:17:00 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: /]
+in APPPATH/Config/Routes.php on line 10.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-14 09:17:26 --> Error: Class "Services" not found
+[Method: GET, Route: /]
+in APPPATH/Config/Routes.php on line 11.
+ 1 SYSTEMPATH/Router/RouteCollection.php(340): require()
+ 2 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 09:24:15 --> ErrorException: Namespace declaration statement has to be the very first statement or after any declare call in the script
+[Method: GET, Route: /]
+in APPPATH/Controllers/Home.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-06-14 09:24:50 --> TypeError: App\Controllers\Home::index(): Return value must be of type string, CodeIgniter\HTTP\Response returned
+[Method: GET, Route: /]
+in APPPATH/Controllers/Home.php on line 11.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->index()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 09:34:00 --> TypeError: App\Controllers\Home::getRelatorioDespesas(): Return value must be of type string, CodeIgniter\HTTP\Response returned
+[Method: GET, Route: /]
+in APPPATH/Controllers/Home.php on line 18.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->getRelatorioDespesas()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:20:21 --> Error: Call to undefined method App\Controllers\Api\RelatorioDespesaController::respond()
+[Method: GET, Route: Api/RelatorioDespesaController/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesaController.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesaController->getRelatorioDespesas()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesaController))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:21:19 --> Error: Call to undefined function App\Controllers\Api\isRequestValid()
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:21:48 --> ErrorException: Undefined variable $valor
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 24.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $valor', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 24)
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(14): App\Controllers\Api\RelatorioDespesas->isRequestValid(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:22:05 --> ErrorException: Attempt to read property "dataInicial" on null
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 24.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on null', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 24)
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(14): App\Controllers\Api\RelatorioDespesas->isRequestValid(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:33:35 --> ErrorException: Undefined variable $rules
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 29.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rules', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 29)
+ 2 APPPATH/Controllers/Api/RelatorioDespesas.php(19): App\Controllers\Api\RelatorioDespesas->isRequestValid(null)
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:33:48 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(24): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:36:37 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(24): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:38:44 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(25): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:38:51 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(25): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:38:55 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(25): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:46:27 --> ErrorException: Attempt to read property "dataInicial" on null
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 24.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on null', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 24)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:47:00 --> ErrorException: Attempt to read property "dataInicial" on null
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 24.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on null', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 24)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:47:59 --> ErrorException: Attempt to read property "dataInicial" on array
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 25.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on array', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 25)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:48:00 --> ErrorException: Attempt to read property "dataInicial" on array
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 25.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on array', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 25)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:48:00 --> ErrorException: Attempt to read property "dataInicial" on array
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 25.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on array', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 25)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:48:21 --> ErrorException: Attempt to read property "dataInicial" on array
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 26.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on array', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 26)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:48:23 --> ErrorException: Attempt to read property "dataInicial" on array
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 26.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on array', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 26)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:48:54 --> ErrorException: Attempt to read property "dataInicial" on array
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 26.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataInicial" on array', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 26)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:49:12 --> ErrorException: Attempt to read property "dataFinal" on array
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 26.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataFinal" on array', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 26)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:49:13 --> ErrorException: Attempt to read property "dataFinal" on array
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 26.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "dataFinal" on array', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 26)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:49:25 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(31): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:49:26 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(31): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:49:26 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(31): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:49:43 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(31): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:49:46 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(31): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:52:14 --> ParseError: syntax error, unexpected token "var"
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 27.
+ 1 SYSTEMPATH/Router/Router.php(562): CodeIgniter\Router\AutoRouter->getRoute('Api/RelatorioDespesas/getRelatorioDespesas', 'GET')
+ 2 SYSTEMPATH/Router/Router.php(227): CodeIgniter\Router\Router->autoRoute('Api/RelatorioDespesas/getRelatorioDespesas')
+ 3 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('Api/RelatorioDespesas/getRelatorioDespesas')
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:52:23 --> ParseError: syntax error, unexpected token "var"
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 27.
+ 1 SYSTEMPATH/Router/Router.php(562): CodeIgniter\Router\AutoRouter->getRoute('Api/RelatorioDespesas/getRelatorioDespesas', 'GET')
+ 2 SYSTEMPATH/Router/Router.php(227): CodeIgniter\Router\Router->autoRoute('Api/RelatorioDespesas/getRelatorioDespesas')
+ 3 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('Api/RelatorioDespesas/getRelatorioDespesas')
+ 4 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:52:43 --> Error: Undefined constant "App\Controllers\Api\errors"
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:55:47 --> Error: Call to undefined function App\Controllers\Api\IsDatesValid()
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 25.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 2 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 3 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:56:07 --> ErrorException: Undefined variable $errors
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Controllers/Api/RelatorioDespesas.php on line 26.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $errors', '/var/www/html/app/Controllers/Api/RelatorioDespesas.php', 26)
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 10:56:35 --> BadMethodCallException: Call to undefined method App\Models\RelatorioDespesaModel::obterRelatorio
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Model.php on line 932.
+ 1 APPPATH/Controllers/Api/RelatorioDespesas.php(30): CodeIgniter\Model->__call('obterRelatorio', [])
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 3 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:57:03 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'admin', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:57:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:58:45 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:58:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:58:46 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:58:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:58:47 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:58:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:58:47 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:58:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:58:47 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:58:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:58:47 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:58:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:45 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:46 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:47 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:47 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:48 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:48 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:48 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:49 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-06-14 10:59:49 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:186
+Stack trace:
+#0 /var/www/html/system/Database/MySQLi/Connection.php(186): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'sglinx', 3306, '', 0)
+#1 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#4 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#5 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#6 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#7 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#9 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /var/www/html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/app/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod,...')
+#3 /var/www/html/app/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+#4 /var/www/html/system/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+#5 /var/www/html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+#6 /var/www/html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /var/www/html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#8 /var/www/html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 /var/www/html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2024-06-14 10:59:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/RelatorioDespesaModel.php(13): CodeIgniter\Database\BaseConnection->query('SELECT es1_cod, es1_codbarra, es1_desc, es1_compl, es1_familia, es1_departamento, es1_secao from es1p limit 100')
+ 3 APPPATH/Controllers/Api/RelatorioDespesas.php(30): App\Models\RelatorioDespesaModel->getRelatorio()
+ 4 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Api\RelatorioDespesas->getRelatorioDespesas()
+ 5 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\RelatorioDespesas))
+ 6 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 11:39:12 --> Error: Call to undefined method CodeIgniter\Router\RouteCollection::setHeader()
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Config/Routes.php on line 21.
+ 1 SYSTEMPATH/Router/RouteCollection.php(340): require()
+ 2 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 11:39:18 --> Error: Call to undefined method CodeIgniter\Router\RouteCollection::setHeader()
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Config/Routes.php on line 21.
+ 1 SYSTEMPATH/Router/RouteCollection.php(340): require()
+ 2 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-06-14 11:39:43 --> Error: Call to undefined method CodeIgniter\Router\RouteCollection::setHeader()
+[Method: GET, Route: Api/RelatorioDespesas/getRelatorioDespesas]
+in APPPATH/Config/Routes.php on line 21.
+ 1 SYSTEMPATH/Router/RouteCollection.php(340): require()
+ 2 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
