@@ -41,7 +41,7 @@ interface FiltrosRelatorio {
 
 interface Row {
   descricao: string;
-  valor: number;
+  valor: string;
 }
 
 const filtroInicial: FiltrosRelatorio = {
@@ -61,7 +61,6 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     border: "solid 0.5px #ccc"
   },
 }));
-
 
 function App() {
   const [errors, setErrors] = React.useState([] as string[]);
@@ -234,10 +233,8 @@ function App() {
                         key={row.descricao}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                       >
-                        <StyledTableCell component="th" scope="row">
-                          {row.descricao}
-                        </StyledTableCell>
-                        <StyledTableCell align="right">{row.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</StyledTableCell>
+                        <StyledTableCell component="th" scope="row"> {row.descricao} </StyledTableCell>
+                        <StyledTableCell align="right">{Number(row.valor)?.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</StyledTableCell>
                       </TableRow>
                     ))}
                   </TableBody>
