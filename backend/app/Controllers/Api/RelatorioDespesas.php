@@ -9,9 +9,11 @@ class RelatorioDespesas extends BaseController {
     private $errors = [];
 
     private $rules = [
-        'dataInicial' => 'required|valid_date[Y-m-d]',
-        'dataFinal' => 'required|valid_date[Y-m-d]',
-        'filial' => 'required|is_natural_no_zero'
+        'dataInventarioEstoqueInicial' => 'required|valid_date[Y-m-d]',
+        'dataInventarioEstoqueFinal' => 'required|valid_date[Y-m-d]',
+        'empresa' => 'required|is_natural_no_zero',
+        'mes' => 'required',
+        'ano' => 'required',
     ];
 
     public function getRelatorioDespesas(){
@@ -22,12 +24,23 @@ class RelatorioDespesas extends BaseController {
         }
         $validData = $this->validator->getValidated();
 
-        if(!$this->isDatesValid($validData['dataInicial'], $validData['dataFinal'])){
+        $dataInventarioEstoqueInicial = $validData['dataInventarioEstoqueInicial'];
+        $dataInventarioEstoqueFinal = $validData['dataInventarioEstoqueFinal'];
+        $empresa = $validData['empresa'];
+        $mes = $validData['mes'];
+        $ano = $validData['ano'];
+
+        if(!$this->isDatesValid($dataInventarioEstoqueInicial, $dataInventarioEstoqueFinal)){
             return $this->badrequest_response($this->errors);
         }
 
         $model = model('RelatorioDespesaModel');        
-        return  $this->success_response($model->getRelatorio());
+        return  $this->success_response($model->getRelatorio(
+            $mes, 
+            $ano, 
+            $empresa, 
+            $dataInventarioEstoqueInicial, 
+            $dataInventarioEstoqueFinal));
     }
 
     private function isDatesValid($initialDate, $endDate): bool
@@ -35,7 +48,7 @@ class RelatorioDespesas extends BaseController {
         if($initialDate > $endDate){
 
             $this->errors = [
-                'dataInicial' => 'Data inicial não pode ser maior que a data final'
+                'dataInventarioEstoqueInicial' => 'Data do invventário inicial não pode ser maior que a data final do inventário.'
             ];
 
             return false;

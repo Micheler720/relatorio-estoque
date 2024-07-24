@@ -8,21 +8,14 @@ class RelatorioDespesaModel extends ModelBase {
   protected $table = 'fn2';
   protected $allowedFields  = [ 'descricao', 'valor' ];
 
-  public function getRelatorio() {
-
-    $mes = '02';
-    $ano = '2024';
-    $empresa = 12;
-    $dataEstoqueInicial = '2024-05-31';
-    $dataEstoqueFinal = '2024-05-31';
-
+  public function getRelatorio($mes, $ano, $empresa, $dataEstoqueInicial, $dataEstoqueFinal) {
 
      // Define as variáveis no banco de dados
-     $this->db->query("SET @mes := ?", '02');
-     $this->db->query("SET @ano := ?", '2024');
-     $this->db->query("SET @empresa := ?", 12);
-     $this->db->query("SET @dataEstoqueInicial := ?", '2024-05-31');
-     $this->db->query("SET @dataEstoqueFinal := ?", '2024-05-31');
+     $this->db->query("SET @mes := ?", $mes);
+     $this->db->query("SET @ano := ?", $ano);
+     $this->db->query("SET @empresa := ?", $empresa);
+     $this->db->query("SET @dataEstoqueInicial := ?", $dataEstoqueInicial);
+     $this->db->query("SET @dataEstoqueFinal := ?", $dataEstoqueFinal);
 
      $this->db->query("
                   SELECT (SELECT 
@@ -33,6 +26,7 @@ class RelatorioDespesaModel extends ModelBase {
                   AND YEAR(fn2_emis) = @ano
                   AND fn2_empresa = @empresa)
                   INTO @valorCompraRevenda");
+
      $this->db->query("
                   SELECT (SELECT
                       IFNULL(sum(fn2_valor), 0)
@@ -43,7 +37,6 @@ class RelatorioDespesaModel extends ModelBase {
                   AND fn2_empresa = @empresa)
                   INTO @valorTransferenciaMercadoria;");
 
-      
      $this->db->query("
                   SELECT (SELECT 
                       IFNULL(sum(fn2_valor), 0)
@@ -82,7 +75,6 @@ class RelatorioDespesaModel extends ModelBase {
                   AND YEAR(fn2_emis) = @ano
                   AND fn2_empresa = @empresa)
                   INTO @valorRetiradaSocios;");
-
 
      $this->db->query("
                 SELECT (SELECT 
@@ -138,111 +130,132 @@ class RelatorioDespesaModel extends ModelBase {
      $this->db->query("SET @valorDemaisDespesas = @valorCompraRevenda + @valorTransferenciaMercadoria;");
      $this->db->query("SET @valorTotalReceitas = @valorVendaBruta;");
      $this->db->query("SET @valorLucroLiquido = @valorTotalReceitas - @valorDemaisDespesas - @valorCustoMercadoriaVendida;");
-     $this->db->query("SET @percentualMarkupMedio = ((@valorVendaBruta - (@valorEstoqueInicial - @valorEstoqueFinal))/@valorDemaisDespesas) - 100;");
+     $this->db->query("SET @percentualMarkupMedio = 0");
      $this->db->query("SET @resultadoLoja =  @valorVendaBruta + @valorEstoqueFinal - @valorCompraRevenda - @valorTransferenciaMercadoria - @valorCustoMercadoriaVendida;");
-     $this->db->query("SET @valorDeducaoDespesa =  'VERIFICAR';");
-     $this->db->query("SET @valorSaldoEmCaixa = 'VERIFICAR';");
+     $this->db->query("SET @valorDeducaoDespesa =  999999;");
+     $this->db->query("SET @valorSaldoEmCaixa = 999999;");
      $this->db->query("SET @valorResultadoFinanceiro = @valorContasAReceber + @valorSaldoBanco - @valorContasAPagar;");
 
     $sql = "
           SELECT 
-              'ESTOQUE INICIAL' AS descricao,
-              @valorEstoqueInicial  AS valor
+              'Estoque Inicial' AS descricao,
+              @valorEstoqueInicial  AS valor,
+              '' AS classe
           UNION
           SELECT 
-            'COMPRA E REVENDA' AS descricao, 
-            @valorCompraRevenda AS valor
+            'Compra e Revenda' AS descricao, 
+            @valorCompraRevenda AS valor,
+            '' AS classe
           UNION 
           SELECT 
-            'COMPRA MATÉRIA PRIMA' AS descricao, 
-            'FALTA' AS valor
+            'Compra Matéria Prima' AS descricao, 
+            9999999 AS valor,
+            '' AS classe
           UNION
           SELECT 
-            'TRANSFERENCIA MERCADORIA - Entrada' AS descricao, 
-            @valorTransferenciaMercadoria AS valor
+            'Transferência Mercadoria - Entrada' AS descricao, 
+            @valorTransferenciaMercadoria AS valor,
+            '' AS classe
           UNION
           SELECT 
-              'ESTOQUE FINAL' AS descricao,
-              @valorEstoqueFinal AS valor
+              'Estoque Final' AS descricao,
+              @valorEstoqueFinal AS valor,
+              '' AS classe
           UNION
           SELECT 
-            'CUSTO MERCADORIA VENDIDA' AS descricao, 
-            @valorCustoMercadoriaVendida AS valor
+            'Custo Mercadoria Vendida' AS descricao, 
+            @valorCustoMercadoriaVendida AS valor,
+            '' AS classe
           UNION 
           SELECT 
-              'VENDA BRUTA' AS descricao, 
-              @valorVendaBruta AS valor
+            'Venda Bruta' AS descricao, 
+            @valorVendaBruta AS valor,
+            '' AS classe
           UNION 
           SELECT 
-            'OUTRAS RECEITAS' AS descricao, 
-            'FALTA' AS valor
+            'Outras Receitas' AS descricao, 
+            9999999 AS valor,
+            '' AS classe
           UNION 
           SELECT 
-            'DEDUÇÃO DE RECEITAS' AS descricao, 
-            'FALTA' AS valor
+            'Dedução de Receitas' AS descricao, 
+            9999999 AS valor,
+            '' AS classe
           UNION 
           SELECT 
-            'TOTAL RECEITAS' AS descricao, 
-            @valorTotalReceitas AS valor
+            'Total Receitas' AS descricao, 
+            @valorTotalReceitas AS valor,
+            'subtotal' AS classe
           UNION 
           SELECT 
-            'DEMAIS DESPESAS' AS descricao, 
-            @valorDemaisDespesas AS valor
+            'Demais Despesas' AS descricao, 
+            @valorDemaisDespesas AS valor,
+            '' AS classe
           UNION 
           SELECT 
-            'LUCRO BRUTO' AS descricao, 
-            @valorLucroBruto AS valor
+            'Lucro Bruto' AS descricao, 
+            @valorLucroBruto AS valor,
+            'subtotal' AS classe
           UNION
           SELECT 
-            'LUCRO LIQUIDO' AS descricao, 
-            @valorLucroLiquido AS valor
+            'Lucro Líquido' AS descricao, 
+            @valorLucroLiquido AS valor,
+            'subtotal' AS classe
           UNION
           SELECT 
-            'MARKUP MEDIO' AS descricao, 
-            @percentualMarkupMedio AS valor
+            'Markup Médio' AS descricao, 
+            @percentualMarkupMedio AS valor,
+            'subtotal' AS classe
           UNION
           SELECT 
-            'DEDUCAO DESPESA' AS descricao, 
-            @valorDeducaoDespesa AS valor
+            'Dedução de Despesas' AS descricao, 
+            @valorDeducaoDespesa AS valor,
+            '' AS classe
           UNION
           SELECT 
-            'RESULTADO LOJA' AS descricao, 
-            @resultadoLoja AS valor
+            'Resultado Lojas' AS descricao, 
+            @resultadoLoja AS valor,
+            '' AS classe
           UNION
           SELECT 
-              'DESPESAS LOJA' AS descricao, 
-              @valorDespesaLoja AS valor 
+            'Despesas Loja' AS descricao, 
+            @valorDespesaLoja AS valor,
+            'subtotal' AS classe 
           UNION
           SELECT 
-              'RETIRADA SOCIOS' AS descricao, 
-              @valorRetiradaSocios AS valor
+            'Retirada Sócios' AS descricao, 
+            @valorRetiradaSocios AS valor,
+            '' AS classe
           UNION
           SELECT 
-              'SALDO EM CAIXA' AS descricao, 
-              @valorSaldoEmCaixa AS valor
+            'Saldo em Caixa' AS descricao, 
+            @valorSaldoEmCaixa AS valor,
+            'subtotal' AS classe
           UNION
           SELECT 
-              'SALDO EM BANCOS' AS descricao, 
-              @valorSaldoBanco AS valor
+            'Saldo em Banco' AS descricao, 
+            @valorSaldoBanco AS valor,
+            'subtotal' AS classe
           UNION
           SELECT 
-              'CONTAS A PAGAR' AS descricao, 
-              @valorContasAPagar AS valor
+            'Contas a Pagar' AS descricao, 
+            @valorContasAPagar AS valor,
+            '' AS classe
           UNION
           SELECT 
-              'CONTAS A RECEBER' AS descricao, 
-              @valorContasAReceber  AS valor
+            'Contas a Receber' AS descricao, 
+            @valorContasAReceber  AS valor,
+            '' AS classe
           UNION
           SELECT 
-              'RESULTADO FINANCEIRO' AS descricao,
-              @valorResultadoFinanceiro  AS valor
+            'Resultado Financeiro' AS descricao,
+            @valorResultadoFinanceiro  AS valor,
+            'resultado' AS classe
           
           ;";
 
     $query = $this->db->query($sql);
     return $this->obterResultado($query);
-  }
-
-  
+  }  
 }
 ?>

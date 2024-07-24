@@ -13,7 +13,6 @@ const AppDatePicker: React.FC<AppDatePickerProps> = (props) => {
   return (
     <Box sx={{ }}>
       <DesktopDatePicker
-        {...props}
         format='DD/MM/YYYY'
         slotProps={{
           textField: {
@@ -28,6 +27,7 @@ const AppDatePicker: React.FC<AppDatePickerProps> = (props) => {
             }
           }
         }}
+        {...props}
       />
       <AppInputError error={props.errorMessage} />
     </Box>
