@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import moment from 'moment';
 import * as Yup from 'yup';
@@ -8,10 +8,10 @@ import { Box } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import AppDatePicker from './components/AppDatePicker';
 import FormService, { FormErrors } from './services/form.services';
-import AppSelect from './components/AppSelect';
+import AppSelect, { AppSelectOption } from './components/AppSelect';
 import AppLoading from './components/AppLoading';
 import api from './services/api';
-import { getDateFormat, getMonthYearFormat } from './utils/dateUtils';
+import { getDateFormat } from './utils/dateUtils';
 import AppErrorList from './components/AppErrorList';
 
 const formSchema = Yup.object({
@@ -47,7 +47,7 @@ interface Row {
 const filtroInicial: FiltrosRelatorio = {
   dataInventarioEstoqueInicial: getDateFormat(new Date()),
   dataInventarioEstoqueFinal: getDateFormat(new Date()),
-  mesAno: getMonthYearFormat(new Date()),
+  mesAno: getDateFormat(new Date()),
   empresa: 0
 }
 
@@ -85,6 +85,7 @@ const StyledTableResultado = styled(TableCell)(({theme}) => ({
 
 function App() {
   const [errors, setErrors] = React.useState([] as string[]);
+  const [filiais, setFiliais] = React.useState([] as AppSelectOption[]);
   const [title, setTitle] = React.useState("");
   const [formData, setFormData] = React.useState(filtroInicial);
   const [formErrors, setFormErrors] = useState({} as FormErrors);
@@ -99,6 +100,34 @@ function App() {
 
   const formService = new FormService(formData, setFormData, setErrors, setFormErrors, formErrors);
 
+  const handleGetEmpresas = async () => {
+    setLoading(true);
+    try {  
+      const response = await api.get(`Empresas/get`);      
+      if (response.status !== 200) {
+        throw response.data;
+      }
+
+      let opcoes = [] as AppSelectOption[];
+
+      opcoes.push({value: 0, label: "Selecione uma empresa"})
+
+      response.data.body.forEach((element: any) => {
+        opcoes.push({value: element.filial, label: element.id })
+      });
+
+      setFiliais(opcoes);
+
+
+    } catch(err)
+    {
+      formService.handleErros(err);
+    }
+
+    setLoading(false);
+
+  }
+
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     formService.cleanErrors();
@@ -109,11 +138,11 @@ function App() {
 
       await formSchema.validate(formData, { abortEarly: false });
 
-      const mes = formData.mesAno.substring(0, 2);
-      const ano = formData.mesAno.substring(3, 7);
+      const ano = formData.mesAno.substring(0, 4);
+      const mes = formData.mesAno.substring(5, 7);
       
 
-      const response = await api.get(`RelatorioDespesas/getRelatorioDespesas?`
+      const response = await api.get(`DRE/getDRE?`
         + `dataInventarioEstoqueInicial=${formData.dataInventarioEstoqueInicial}`
         + `&dataInventarioEstoqueFinal=${formData.dataInventarioEstoqueFinal}`
         + `&empresa=${formData.empresa}&mes=${mes}&ano=${ano}`);
@@ -132,13 +161,9 @@ function App() {
 
   }
 
-  const filiais = [
-    { value: 0, label: "Selecione a Filial" },
-    { value: 1, label: "Filial 1" },
-    { value: 2, label: "Filial 2" },
-    { value: 3, label: "Filial 3" },
-    { value: 4, label: "Filial 4" }
-  ];
+  useEffect(() => {
+    handleGetEmpresas();
+  }, [])
 
   return (
     <>
@@ -183,8 +208,8 @@ function App() {
                   name="mesAno"                  
                   value={moment(formData.mesAno)}
                   views={['month', 'year']} 
-                  format='MM/YYYY'
-                  onChange={(date) => formService.setInputValue("mesAno", date?.format("MM-YYYY"))}
+                  format="YYYY-MM"
+                  onChange={(date) => {console.log(formData.mesAno);  formService.setInputValue("mesAno", date?.format("YYYY-MM")); console.log(formData.mesAno);}}
                   errorMessage={formErrors['mesAno']}
                 />
 

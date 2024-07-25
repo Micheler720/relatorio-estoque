@@ -1,9 +1,8 @@
 <?php
 namespace App\Models;
 use App\Models\ModelBase;
-use CodeIgniter\Database\Query;
 
-class RelatorioDespesaModel extends ModelBase {
+class DREModel extends ModelBase {
 
   protected $table = 'fn2';
   protected $allowedFields  = [ 'descricao', 'valor' ];

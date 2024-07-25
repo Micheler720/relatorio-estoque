@@ -2,9 +2,7 @@
 namespace App\Controllers\Api;
 
 use App\Controllers\BaseController;
-use App\Models\RelatorioDespesaModel;
-
-class RelatorioDespesas extends BaseController {
+class DRE extends BaseController {
 
     private $errors = [];
 
@@ -16,7 +14,7 @@ class RelatorioDespesas extends BaseController {
         'ano' => 'required',
     ];
 
-    public function getRelatorioDespesas(){
+    public function getDRE(){
         $request = $this->request->getJSON();
 
         if(!$this->validate($this->rules)){            
@@ -34,7 +32,7 @@ class RelatorioDespesas extends BaseController {
             return $this->badrequest_response($this->errors);
         }
 
-        $model = model('RelatorioDespesaModel');        
+        $model = model('DREModel');        
         return  $this->success_response($model->getRelatorio(
             $mes, 
             $ano, 

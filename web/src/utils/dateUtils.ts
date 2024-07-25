@@ -1,7 +1,9 @@
 export function getDateFormat(date: Date) : string {
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-}
+    let month = date.getMonth() + 1;
+    let monthString = month.toString();
+    
+    if(month < 10) 
+        monthString = `0${month}`;
 
-export function getMonthYearFormat(date: Date) : string {
-    return `${date.getFullYear()}-${date.getMonth() + 1}`
+    return `${date.getFullYear()}-${monthString}-${date.getDate()}`
 }
