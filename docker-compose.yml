@@ -13,6 +13,7 @@ services:
       - '88:88'
     volumes:
       - ./backend:/var/www/html
+      - ./web/build:/var/www/html/web
       - ./docker/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ./docker/php/sites-enabled.conf:/etc/apache2/sites-enabled/sites-enabled.conf
       # - ./docker/php.ini:/usr/local/etc/php/conf.d/custom.ini
