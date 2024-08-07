@@ -12,6 +12,7 @@ import AppSelect, { AppSelectOption } from './components/AppSelect';
 import AppLoading from './components/AppLoading';
 import api from './services/api';
 import { getDateFormat } from './utils/dateUtils';
+import { getFormatNumber } from './utils/formatNumberUtils';
 import AppErrorList from './components/AppErrorList';
 
 const formSchema = Yup.object({
@@ -42,6 +43,7 @@ interface Row {
   descricao: string;
   valor: string;
   classe: string;
+  tipoValor: string;
 }
 
 const filtroInicial: FiltrosRelatorio = {
@@ -169,7 +171,7 @@ function App() {
     <>
       <AppLoading isLoading={loading} />
       <Paper elevation={0} sx={{ height: '100vh', display: "block", position: "absolute" }}>
-        <Box sx={{ width: "100vw", display: 'flex', p: 1, alignItems: 'center', justifyContent: "center", background: "#1976d2", borderRadius: "0px", height: "42px" }}>
+        <Box sx={{ minWidth: "100vw", display: 'flex', p: 1, alignItems: 'center', justifyContent: "center", background: "#1976d2", borderRadius: "0px", height: "42px" }}>
           <Assessment sx={{ fontSize: 24, color: "#ebebeb", mr: 2 }} />
           <Typography variant="h1" component="h1" sx={{ fontSize: 24, textAlign: 'center', color: "#000" }}>
             DRE
@@ -267,21 +269,21 @@ function App() {
                         {row.classe === "subtotal" &&
                             <>
                               <StyledTableSubtotal component="th" scope="row"> {row.descricao} </StyledTableSubtotal>
-                              <StyledTableSubtotal align="right">{Number(row.valor)?.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</StyledTableSubtotal>
+                              <StyledTableSubtotal align="right">{getFormatNumber(row.valor, row.tipoValor)}</StyledTableSubtotal>
                             </>
                         }
                         {
                           row.classe === "resultado" &&
                           <>
                             <StyledTableResultado component="th" scope="row"> {row.descricao} </StyledTableResultado>
-                            <StyledTableResultado align="right">{Number(row.valor)?.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</StyledTableResultado>
+                            <StyledTableResultado align="right">{getFormatNumber(row.valor, row.tipoValor)}</StyledTableResultado>
                           </>
                         }
                         {
                           row.classe === "" &&
                           <>
                             <StyledTableCell component="th" scope="row"> {row.descricao} </StyledTableCell>
-                            <StyledTableCell align="right">{Number(row.valor)?.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}</StyledTableCell>
+                            <StyledTableCell align="right">{getFormatNumber(row.valor, row.tipoValor)}</StyledTableCell>
                           </>
                         }
                       </StyledTableRow>
