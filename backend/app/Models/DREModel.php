@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\ModelBase;
+use App\Enums\TipoValor;
 
 class DREModel extends ModelBase
 {
@@ -165,119 +166,140 @@ class DREModel extends ModelBase
           SELECT 
               'Estoque Inicial' AS descricao,
               @valorEstoqueInicial  AS valor,
-              '' AS classe
-          UNION
+              '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Compra e Revenda' AS descricao, 
             @valorCompraRevenda AS valor,
-            '' AS classe
-          UNION 
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION 
           SELECT 
             'Compra Matéria Prima' AS descricao, 
             @compraMateriaPrima AS valor,
-            '' AS classe
-          UNION
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Transferência Mercadoria - Entrada' AS descricao, 
             @valorTransferenciaMercadoria AS valor,
-            '' AS classe
-          UNION
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
               'Estoque Final' AS descricao,
               @valorEstoqueFinal AS valor,
-              '' AS classe
-          UNION
+              '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Custo Mercadoria Vendida' AS descricao, 
             @valorCustoMercadoriaVendida AS valor,
-            '' AS classe
-          UNION 
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION 
           SELECT 
             'Venda Bruta' AS descricao, 
             @valorVendaBruta AS valor,
-            '' AS classe
-          UNION 
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION 
           SELECT 
             'Outras Receitas' AS descricao, 
             0 AS valor,
-            '' AS classe
-          UNION 
+            '' AS classe," .
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION 
           SELECT 
             'Dedução de Receitas' AS descricao, 
             0 AS valor,
-            '' AS classe
-          UNION 
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION 
           SELECT 
             'Total Receitas' AS descricao, 
             @valorTotalReceitas AS valor,
-            'subtotal' AS classe
-          UNION 
+            'subtotal' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION 
           SELECT 
             'Demais Despesas' AS descricao, 
             @valorDemaisDespesas AS valor,
-            '' AS classe
-          UNION 
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION 
           SELECT 
             'Lucro Bruto' AS descricao, 
             @valorLucroBruto AS valor,
-            'subtotal' AS classe
-          UNION
+            'subtotal' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Lucro Líquido' AS descricao, 
             @valorLucroLiquido AS valor,
-            'subtotal' AS classe
-          UNION
+            'subtotal' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Markup Médio %' AS descricao, 
             @percentualMarkupMedio AS valor,
-            'subtotal' AS classe
-          UNION
+            'subtotal' AS classe,".
+            TipoValor::percentual()." AS tipoValor"
+          ." UNION
           SELECT 
             'Dedução de Despesas' AS descricao, 
             @valorDeducaoDespesa AS valor,
-            '' AS classe
-          UNION
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Resultado Lojas' AS descricao, 
             @resultadoLoja AS valor,
-            '' AS classe
-          UNION
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Despesas Loja' AS descricao, 
             @valorDespesaLoja AS valor,
-            'subtotal' AS classe 
-          UNION
+            'subtotal' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Retirada Sócios' AS descricao, 
             @valorRetiradaSocios AS valor,
-            '' AS classe
-          UNION
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Saldo em Caixa' AS descricao, 
             @valorSaldoEmCaixa AS valor,
-            'subtotal' AS classe
-          UNION
+            'subtotal' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Saldo em Banco' AS descricao, 
             @valorSaldoBanco AS valor,
-            'subtotal' AS classe
-          UNION
+            'subtotal' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Contas a Pagar' AS descricao, 
             @valorContasAPagar AS valor,
-            '' AS classe
-          UNION
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Contas a Receber' AS descricao, 
-            @valorContasAReceber  AS valor,
-            '' AS classe
-          UNION
+            @valorContasAReceber AS valor,
+            '' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor"
+          ." UNION
           SELECT 
             'Resultado Financeiro' AS descricao,
-            @valorResultadoFinanceiro  AS valor,
-            'resultado' AS classe
-          
-          ;";
+            @valorResultadoFinanceiro AS valor,
+            'resultado' AS classe,".
+            TipoValor::dinheiro()." AS tipoValor";
 
     $query = $this->db->query($sql);
     return $this->obterResultado($query);
