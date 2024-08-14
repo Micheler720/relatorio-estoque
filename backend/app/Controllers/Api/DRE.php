@@ -32,10 +32,13 @@ class DRE extends BaseController {
             return $this->badrequest_response($this->errors);
         }
 
+        $dataInicial = $ano."-".$mes."-01";
+        $dataFinal = $ano."-".$mes."-31";
+
         $model = model('DREModel');        
         return  $this->success_response($model->getRelatorio(
-            $mes, 
-            $ano, 
+            $dataInicial, 
+            $dataFinal, 
             $empresa, 
             $dataInventarioEstoqueInicial, 
             $dataInventarioEstoqueFinal));
