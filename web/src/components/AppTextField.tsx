@@ -37,6 +37,7 @@ const AppTextField: React.FC<FormTextFieldProps> = (props) => {
                     "svg > path": {
                         fill: "#4d4d4d"
                     },
+                    zIndex: 999999,
                     ...sx
                 }}
                 {...rest}

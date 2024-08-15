@@ -2,7 +2,7 @@ import React, { FormEvent, useEffect, useState } from 'react';
 import Card from '@mui/material/Card';
 import moment from 'moment';
 import * as Yup from 'yup';
-import { Button, Paper, styled, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Button, FormControl, FormControlLabel, FormLabel, Paper, Radio, RadioGroup, styled, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { Assessment, FilterAlt } from '@mui/icons-material';
 import { Box } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -14,6 +14,9 @@ import api from './services/api';
 import { getDateFormat } from './utils/dateUtils';
 import { getFormatNumber } from './utils/formatNumberUtils';
 import AppErrorList from './components/AppErrorList';
+import AppTextField from './components/AppTextField';
+import { TipoEstoqueFinal } from './enums/tipoEstoqueFinal';
+
 
 const formSchema = Yup.object({
   dataInventarioEstoqueInicial: Yup
@@ -22,18 +25,20 @@ const formSchema = Yup.object({
   empresa: Yup
     .number()
     .required('Obrigatório informar a empresa.')
-    .min(1, 'Obrigatório informar a empresa.'),  
+    .min(1, 'Obrigatório informar a empresa.'),
   dataInicial: Yup
     .string()
-    .required('Obrigatório informar a data inicial para obter o resultado.')
+    .required('Obrigatório informar a data inicial para obter o resultado.')  
 });
 
 interface FiltrosRelatorio {
-  dataInventarioEstoqueFinal: string;
+  dataInventarioEstoqueFinal?: string;
   dataInventarioEstoqueInicial: string;
+  valorEstoqueFinal?: number;
   dataInicial: string;
   dataFinal: string;
   empresa: number;
+  tipoEstoqueFinal: TipoEstoqueFinal;
 }
 
 interface Row {
@@ -48,6 +53,7 @@ const filtroInicial: FiltrosRelatorio = {
   dataInventarioEstoqueFinal: getDateFormat(new Date()),
   dataInicial: getDateFormat(new Date()),
   dataFinal: getDateFormat(new Date()),
+  tipoEstoqueFinal: TipoEstoqueFinal.Data,
   empresa: 0
 }
 
@@ -66,7 +72,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }));
 
-const StyledTableSubtotal = styled(TableCell)(({theme}) => ({
+const StyledTableSubtotal = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
     fontWeight: "bold",
@@ -74,7 +80,7 @@ const StyledTableSubtotal = styled(TableCell)(({theme}) => ({
   },
 }));
 
-const StyledTableResultado = styled(TableCell)(({theme}) => ({
+const StyledTableResultado = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
     fontWeight: "bold",
@@ -102,25 +108,24 @@ function App() {
 
   const handleGetEmpresas = async () => {
     setLoading(true);
-    try {  
-      const response = await api.get(`Empresas/get`);      
+    try {
+      const response = await api.get(`Empresas/get`);
       if (response.status !== 200) {
         throw response.data;
       }
 
       let opcoes = [] as AppSelectOption[];
 
-      opcoes.push({value: 0, label: "Selecione uma empresa"})
+      opcoes.push({ value: 0, label: "Selecione uma empresa" })
 
       response.data.body.forEach((element: any) => {
-        opcoes.push({value: element.filial, label: element.id })
+        opcoes.push({ value: element.filial, label: element.id })
       });
 
       setFiliais(opcoes);
 
 
-    } catch(err)
-    {
+    } catch (err) {
       formService.handleErros(err);
     }
 
@@ -143,12 +148,14 @@ function App() {
       const ano = formData.dataInicial.substring(0, 4);
       const mes = formData.dataInicial.substring(5, 7);
 
-      const { dataFinal, dataInicial, dataInventarioEstoqueFinal, dataInventarioEstoqueInicial, empresa } = formData;
-      
+      const { dataFinal, dataInicial, dataInventarioEstoqueFinal, dataInventarioEstoqueInicial, empresa, tipoEstoqueFinal, valorEstoqueFinal } = formData;
+
 
       const response = await api.get(`DRE/getDRE?`
         + `dataInventarioEstoqueInicial=${dataInventarioEstoqueInicial}`
         + `&dataInventarioEstoqueFinal=${dataInventarioEstoqueFinal}`
+        + `&tipoEstoqueFinal=${tipoEstoqueFinal}`
+        + `&valorEstoqueFinal=${valorEstoqueFinal}`
         + `&empresa=${empresa}&dataInicial=${dataInicial}&dataFinal=${dataFinal}`);
 
       if (response.status !== 200) {
@@ -209,19 +216,19 @@ function App() {
               <Box sx={{ gap: 4, m: 2, display: "flex", flexDirection: "column" }}>
                 <AppDatePicker
                   label="Data Inicial"
-                  name="dataInicial"                  
+                  name="dataInicial"
                   value={moment(formData.dataInicial)}
                   format="DD-MM-YYYY"
-                  onChange={(date) => {formService.setInputValue("dataInicial", date?.format("YYYY-MM-DD"));}}
+                  onChange={(date) => { formService.setInputValue("dataInicial", date?.format("YYYY-MM-DD")); }}
                   errorMessage={formErrors['dataInicial']}
                 />
 
                 <AppDatePicker
                   label="Data Final"
-                  name="dataFinal"                  
+                  name="dataFinal"
                   value={moment(formData.dataFinal)}
                   format="DD-MM-YYYY"
-                  onChange={(date) => {formService.setInputValue("dataFinal", date?.format("YYYY-MM-DD"));}}
+                  onChange={(date) => { formService.setInputValue("dataFinal", date?.format("YYYY-MM-DD")); }}
                   errorMessage={formErrors['dataFinal']}
                 />
 
@@ -243,14 +250,39 @@ function App() {
                   onChange={(date) => formService.setInputValue("dataInventarioEstoqueInicial", date?.format("YYYY-MM-DD"))}
                   errorMessage={formErrors['dataInventarioEstoqueInicial']}
                 />
+                <FormControl>
+                  <FormLabel id="tipoEstoqueFinal">Tipo Estoque Final</FormLabel>
+                  <RadioGroup
+                    row
+                    name="tipoEstoqueFinal"
+                    onChange={(event) =>{formService.setInputValue("tipoEstoqueFinal", Number(event.target.value))}}
+                  >
+                    <FormControlLabel checked={formData.tipoEstoqueFinal === TipoEstoqueFinal.Data} value={TipoEstoqueFinal.Data} control={<Radio />} label="Data" />
+                    <FormControlLabel checked={formData.tipoEstoqueFinal === TipoEstoqueFinal.Valor} value={TipoEstoqueFinal.Valor} control={<Radio />} label="Valor" />
+                  </RadioGroup>
+                </FormControl>
 
-                <AppDatePicker
-                  label="Data inventário Final*"
-                  name="dataInventarioEstoqueFinal"
-                  value={moment(formData.dataInventarioEstoqueFinal)}
-                  onChange={(date) => formService.setInputValue("dataInventarioEstoqueFinal", date?.format("YYYY-MM-DD"))}
-                  errorMessage={formErrors['dataInventarioEstoqueFinal']}
-                />
+                {formData.tipoEstoqueFinal === TipoEstoqueFinal.Data &&
+                  <AppDatePicker
+                    label="Data inventário Final*"
+                    name="dataInventarioEstoqueFinal"
+                    value={moment(formData.dataInventarioEstoqueFinal)}
+                    onChange={(date) => formService.setInputValue("dataInventarioEstoqueFinal", date?.format("YYYY-MM-DD"))}
+                    errorMessage={formErrors['dataInventarioEstoqueFinal']}
+                  />
+                }
+
+                {formData.tipoEstoqueFinal === TipoEstoqueFinal.Valor &&
+                  <AppTextField 
+                    label="Valor estoque final"
+                    name="valorEstoqueFinal"
+                    type='number'
+                    value={formData.valorEstoqueFinal}
+                    onChange={(event) => formService.setInputValue("valorEstoqueFinal", event.target.value)}
+                    errorMessage={formErrors['valorEstoqueFinal']}
+                    fullWidth
+                  />
+                }
                 <Button variant="contained" sx={{ mt: 2 }} fullWidth={false} type='submit' >Buscar</Button>
               </Box>
             </form>
@@ -263,7 +295,7 @@ function App() {
             <Box sx={{ m: 2, ml: 5, display: "flex", alignItems: "center", flexDirection: "column" }}>
               <Typography variant="h5" component="h5" sx={{ fontWeight: "bold", textAlign: 'left', pl: 2, mb: 2 }}>{title}</Typography>
               <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} stickyHeader size="small"  aria-label="simple table">
+                <Table sx={{ minWidth: 650 }} stickyHeader size="small" aria-label="simple table">
                   <TableHead>
                     <TableRow>
                       <StyledTableCell>Descrição </StyledTableCell>
@@ -277,10 +309,10 @@ function App() {
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                       >
                         {row.classe === "subtotal" &&
-                            <>
-                              <StyledTableSubtotal component="th" scope="row"> {row.descricao} </StyledTableSubtotal>
-                              <StyledTableSubtotal align="right">{getFormatNumber(row.valor, row.tipoValor)}</StyledTableSubtotal>
-                            </>
+                          <>
+                            <StyledTableSubtotal component="th" scope="row"> {row.descricao} </StyledTableSubtotal>
+                            <StyledTableSubtotal align="right">{getFormatNumber(row.valor, row.tipoValor)}</StyledTableSubtotal>
+                          </>
                         }
                         {
                           row.classe === "resultado" &&
