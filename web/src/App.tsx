@@ -14,8 +14,8 @@ import api from './services/api';
 import { getDateFormat } from './utils/dateUtils';
 import { getFormatNumber } from './utils/formatNumberUtils';
 import AppErrorList from './components/AppErrorList';
-import AppTextField from './components/AppTextField';
 import { TipoEstoqueFinal } from './enums/tipoEstoqueFinal';
+import AppCurrencyMaskedTextField from './components/AppCurrencyMaskedTextField';
 
 
 const formSchema = Yup.object({
@@ -34,7 +34,7 @@ const formSchema = Yup.object({
 interface FiltrosRelatorio {
   dataInventarioEstoqueFinal?: string;
   dataInventarioEstoqueInicial: string;
-  valorEstoqueFinal?: number;
+  valorEstoqueFinal?: string;
   dataInicial: string;
   dataFinal: string;
   empresa: number;
@@ -150,12 +150,14 @@ function App() {
 
       const { dataFinal, dataInicial, dataInventarioEstoqueFinal, dataInventarioEstoqueInicial, empresa, tipoEstoqueFinal, valorEstoqueFinal } = formData;
 
+      const valorEstoqueFinalNumero = Number(valorEstoqueFinal?.replace("R$ ", "").replace(".", "").replace(",", "."));
+
 
       const response = await api.get(`DRE/getDRE?`
         + `dataInventarioEstoqueInicial=${dataInventarioEstoqueInicial}`
         + `&dataInventarioEstoqueFinal=${dataInventarioEstoqueFinal}`
         + `&tipoEstoqueFinal=${tipoEstoqueFinal}`
-        + `&valorEstoqueFinal=${valorEstoqueFinal}`
+        + `&valorEstoqueFinal=${valorEstoqueFinalNumero}`
         + `&empresa=${empresa}&dataInicial=${dataInicial}&dataFinal=${dataFinal}`);
 
       if (response.status !== 200) {
@@ -256,33 +258,34 @@ function App() {
                     row
                     name="tipoEstoqueFinal"
                     onChange={(event) =>{formService.setInputValue("tipoEstoqueFinal", Number(event.target.value))}}
+                    sx={{mb: 2}}
                   >
                     <FormControlLabel checked={formData.tipoEstoqueFinal === TipoEstoqueFinal.Data} value={TipoEstoqueFinal.Data} control={<Radio />} label="Data" />
                     <FormControlLabel checked={formData.tipoEstoqueFinal === TipoEstoqueFinal.Valor} value={TipoEstoqueFinal.Valor} control={<Radio />} label="Valor" />
                   </RadioGroup>
+
+                  {formData.tipoEstoqueFinal === TipoEstoqueFinal.Data &&
+                    <AppDatePicker
+                      label="Data inventário Final*"
+                      name="dataInventarioEstoqueFinal"
+                      value={moment(formData.dataInventarioEstoqueFinal)}
+                      onChange={(date) => formService.setInputValue("dataInventarioEstoqueFinal", date?.format("YYYY-MM-DD"))}
+                      errorMessage={formErrors['dataInventarioEstoqueFinal']}
+                    />
+                  }
+
+                  {formData.tipoEstoqueFinal === TipoEstoqueFinal.Valor &&
+                    <AppCurrencyMaskedTextField 
+                      label="Valor estoque final"
+                      mask='999,99'
+                      name="valorEstoqueFinal"
+                      value={formData.valorEstoqueFinal}
+                      onChange={(event) => formService.setInputValue("valorEstoqueFinal", event.target.value)}
+                      errorMessage={formErrors['valorEstoqueFinal']}
+                      fullWidth
+                    />
+                  }
                 </FormControl>
-
-                {formData.tipoEstoqueFinal === TipoEstoqueFinal.Data &&
-                  <AppDatePicker
-                    label="Data inventário Final*"
-                    name="dataInventarioEstoqueFinal"
-                    value={moment(formData.dataInventarioEstoqueFinal)}
-                    onChange={(date) => formService.setInputValue("dataInventarioEstoqueFinal", date?.format("YYYY-MM-DD"))}
-                    errorMessage={formErrors['dataInventarioEstoqueFinal']}
-                  />
-                }
-
-                {formData.tipoEstoqueFinal === TipoEstoqueFinal.Valor &&
-                  <AppTextField 
-                    label="Valor estoque final"
-                    name="valorEstoqueFinal"
-                    type='number'
-                    value={formData.valorEstoqueFinal}
-                    onChange={(event) => formService.setInputValue("valorEstoqueFinal", event.target.value)}
-                    errorMessage={formErrors['valorEstoqueFinal']}
-                    fullWidth
-                  />
-                }
                 <Button variant="contained" sx={{ mt: 2 }} fullWidth={false} type='submit' >Buscar</Button>
               </Box>
             </form>

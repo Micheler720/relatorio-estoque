@@ -8,10 +8,12 @@ class DRE extends BaseController {
 
     private $rules = [
         'dataInventarioEstoqueInicial' => 'required|valid_date[Y-m-d]',
-        'dataInventarioEstoqueFinal' => 'required|valid_date[Y-m-d]',
         'empresa' => 'required|is_natural_no_zero',
         'dataInicial' => 'required|valid_date[Y-m-d]',
         'dataFinal' => 'required|valid_date[Y-m-d]',
+        'tipoEstoqueFinal' => 'required|is_natural_no_zero',
+        'dataInventarioEstoqueFinal' => 'valid_date[Y-m-d]',
+        'valorEstoqueFinal' => 'field_exists'
     ];
 
     public function getDRE(){
@@ -20,6 +22,7 @@ class DRE extends BaseController {
         if(!$this->validate($this->rules)){            
             return $this->badrequest_response($this->validator->getErrors());
         }
+
         $validData = $this->validator->getValidated();
 
         $dataInventarioEstoqueInicial = $validData['dataInventarioEstoqueInicial'];
@@ -27,6 +30,8 @@ class DRE extends BaseController {
         $empresa = $validData['empresa'];
         $dataInicial = $validData['dataInicial'];
         $dataFinal = $validData['dataFinal'];
+        $tipoEstoqueFinal = $validData['tipoEstoqueFinal'];
+        $valorEstoqueFinal = $validData['valorEstoqueFinal'];
 
         if(!$this->isDatesValid($dataInventarioEstoqueInicial, $dataInventarioEstoqueFinal)){
             $this->errors = [
@@ -43,18 +48,43 @@ class DRE extends BaseController {
             return $this->badrequest_response($this->errors);
         }
 
+        if(!$this->isEstoqueFinalValido($tipoEstoqueFinal, $dataInventarioEstoqueFinal, $valorEstoqueFinal)){
+            return $this->badrequest_response($this->errors);
+        }
+
         $model = model('DREModel');        
         return  $this->success_response($model->getRelatorio(
             $dataInicial, 
             $dataFinal, 
             $empresa, 
             $dataInventarioEstoqueInicial, 
-            $dataInventarioEstoqueFinal));
+            $dataInventarioEstoqueFinal,
+            $tipoEstoqueFinal,
+            $valorEstoqueFinal));
     }
 
     private function isDatesValid($initialDate, $endDate): bool
     {
         if($initialDate > $endDate){
+            return false;
+        }
+
+        return true;
+    }
+
+    private function isEstoqueFinalValido($tipoEstoqueFinal, $dataInventarioEstoqueFinal, $valorEstoqueFinal): bool
+    {
+        if($tipoEstoqueFinal == 1 && $dataInventarioEstoqueFinal == ""){
+            $this->errors = [
+                'dataInventarioEstoqueFinal' => 'A data do inventário final não pode está vazia.'
+            ];
+            return false;
+        }
+
+        if($tipoEstoqueFinal == 2 && ($valorEstoqueFinal <= 0 || $valorEstoqueFinal == "")){
+            $this->errors = [
+                'valorEstoqueFinal' => 'O valor do estoque final não pode ser 0 ou vazio.'
+            ];
             return false;
         }
 

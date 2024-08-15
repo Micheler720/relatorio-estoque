@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\ModelBase;
 use App\Enums\TipoValor;
+use App\Enums\TipoEstoqueFinal;
 
 class DREModel extends ModelBase
 {
@@ -11,7 +12,7 @@ class DREModel extends ModelBase
   protected $table = 'fn2';
   protected $allowedFields  = ['descricao', 'valor'];
 
-  public function getRelatorio($dataInicial, $dataFinal, $empresa, $dataEstoqueInicial, $dataEstoqueFinal)
+  public function getRelatorio($dataInicial, $dataFinal, $empresa, $dataEstoqueInicial, $dataEstoqueFinal, $tipoEstoqueFinal, $valorEstoqueFinal)
   {
 
     // Define as variáveis no banco de dados
@@ -21,6 +22,9 @@ class DREModel extends ModelBase
     $this->db->query("SET @dataEstoqueInicial := ?", $dataEstoqueInicial);
     $this->db->query("SET @dataEstoqueFinal := ?", $dataEstoqueFinal);
 
+    
+    $this->obterValorEstoqueFinal($tipoEstoqueFinal, $valorEstoqueFinal);
+    
     $this->db->query("
                   SELECT (SELECT 
                       IFNULL(sum(fn2_valor), 0)
@@ -67,15 +71,7 @@ class DREModel extends ModelBase
                   WHERE es7_data = @dataEstoqueInicial)
                   INTO @valorEstoqueInicial;");
 
-    $this->db->query("
-                  SELECT (SELECT
-                      IFNULL(SUM(es7_total), 0) AS valor
-                  FROM es7 
-                  WHERE es7_data = @dataEstoqueFinal)
-                  INTO @valorEstoqueFinal;");
-                 
- 
-   $this->db->query(" 
+    $this->db->query(" 
                   SELECT (SELECT 
                       IFNULL(sum(fn2_valor), 0) valor  
                   FROM fn2 
@@ -84,8 +80,8 @@ class DREModel extends ModelBase
                   AND fn2_emis <= @dataFinal
                   AND fn2_empresa = @empresa)
                   INTO @valorDeducaoDespesa;");
-  
-  $this->db->query("
+
+    $this->db->query("
                   SELECT (SELECT 
                       IFNULL(sum(fn2_valor), 0) valor  
                   FROM fn2 
@@ -94,8 +90,8 @@ class DREModel extends ModelBase
                   AND fn2_emis <= @dataFinal
                   AND fn2_empresa = @empresa)
                   INTO @valorRetiradaSocios;");
-   
- $this->db->query("
+
+    $this->db->query("
                   SELECT (SELECT 
                     (SELECT 
                         IFNULL(SUM(f.fn5_valor), 0) AS 'Entrada' 
@@ -114,8 +110,8 @@ class DREModel extends ModelBase
                     AND f.fn5_data <= @dataFinal
                     AND fn5_empresa = @empresa) AS valor)
                   INTO @valorSaldoTesouraria;");
-    
-$this->db->query("
+
+    $this->db->query("
                 SELECT (SELECT 
                   (SELECT 
                       IFNULL(SUM(f.fn5_valor), 0) AS 'Entrada' 
@@ -134,8 +130,8 @@ $this->db->query("
                   AND f.fn5_data <= @dataFinal
                   AND fn5_empresa = @empresa) AS valor)
                 INTO @valorSaldoCaixaPDV;");
-   
- $this->db->query("
+
+    $this->db->query("
                 SELECT (SELECT 
                   (SELECT 
                       IFNULL(SUM(f.fn5_valor), 0) AS 'Entrada' 
@@ -154,8 +150,8 @@ $this->db->query("
                   AND f.fn5_data <= @dataFinal
                   AND fn5_empresa = @empresa) AS valor)
                 INTO @valorSaldoSicoob;");
-  
-  $this->db->query("
+
+    $this->db->query("
                 SELECT (SELECT 
                   (SELECT 
                       IFNULL(SUM(f.fn5_valor), 0) AS 'Entrada' 
@@ -174,8 +170,8 @@ $this->db->query("
                   AND f.fn5_data <= @dataFinal
                   AND fn5_empresa = @empresa) AS valor)
 		  INTO @valorSaldoPIX;");
-   
- $this->db->query("
+
+    $this->db->query("
                   SELECT (
                     SELECT IFNULL (SUM(fn1_valor),0) 
                     FROM fn1 f INNER JOIN cg1 c 	
@@ -191,9 +187,9 @@ $this->db->query("
                     fn1_emissao <= @dataFinal
                           AND fn1_dtbaixa > @dataFinal
                           AND fn1_empresa = @empresa) 
-                    INTO @valorContasAReceberClientes;");	
- 
-   $this->db->query("
+                    INTO @valorContasAReceberClientes;");
+
+    $this->db->query("
                     SELECT (
                       SELECT IFNULL (SUM(fn1_valor),0) 
                       FROM fn1 f INNER JOIN cg1 c 	
@@ -210,8 +206,8 @@ $this->db->query("
                           AND fn1_dtbaixa > @dataFinal
                           AND fn1_empresa = @empresa) 
                       INTO @valorContasAReceberCartao;");
-  
-  $this->db->query("
+
+    $this->db->query("
                       SELECT (
           SELECT IFNULL (SUM(fn2_valor),0) 
           FROM fn2 	
@@ -249,160 +245,174 @@ $this->db->query("
           SELECT 
               'Estoque Inicial' AS descricao,
               @valorEstoqueInicial  AS valor,
-              '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+              '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Estoque Final' AS descricao,
               @valorEstoqueFinal AS valor,
-              '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+              '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Diferença Estoque' AS descricao, 
             @diferencaEstoque AS valor,
-            'subtotal' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            'subtotal' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Compra e Revenda' AS descricao, 
             @valorCompraRevenda AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
               'Transferencia Mercadoria Entrada' AS descricao,
               @valorTransferenciaMercadoria AS valor,
-              '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+              '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Total Compra Mercadoria' AS descricao, 
             @somaTotalMercadoria AS valor,
-            'subtotal' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            'subtotal' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Venda' AS descricao, 
             @valorVendaBruta AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Lucro' AS descricao, 
             @lucroTotal AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Lucro %' AS descricao, 
             @lucroPer AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::percentual() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Despesas Loja' AS descricao, 
             @valorDespesaLoja AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Dedução de Despesas' AS descricao, 
             @valorDeducaoDespesa AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Total Despesas' AS descricao, 
             @totalDespesas AS valor,
-            'subtotal' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            'subtotal' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Retirada Sócios' AS descricao, 
             @valorRetiradaSocios AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Markup % - Conferir a conta***' AS descricao, 
             @perMarkup AS valor,
-            'resultado' AS classe,".
-            TipoValor::percentual()." AS tipoValor"
-          ." UNION
+            'resultado' AS classe," .
+      TipoValor::percentual() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Resultado Loja' AS descricao, 
             @resultadoLoja AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Saldo Tesouraria' AS descricao, 
             @valorSaldoTesouraria AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Saldo Troco Loja' AS descricao, 
             @valorSaldoCaixaPDV AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Saldo SICOOB' AS descricao, 
             @valorSaldoSicoob AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Saldo PIX' AS descricao, 
             @valorSaldoPIX AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Total Saldo Bancario >>>> ' AS descricao, 
             @totalsaldo AS valor,
-            'resultado' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            'resultado' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Clientes a Receber' AS descricao, 
             @valorContasAReceberClientes AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Cartões a Receber' AS descricao, 
             @valorContasAReceberCartao AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Total a Receber' AS descricao, 
             @totalAReceber  AS valor,
-            'subtotal' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            'subtotal' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Contas a Pagar' AS descricao,
             @valorContasAPagar  AS valor,
-            '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT 
             'Resultado Financeiro' AS descricao,
             @valorResultadoFinanceiro  AS valor,
-            'resultado' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor"
-          ." UNION
+            'resultado' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor"
+      . " UNION
           SELECT
            'RF + EF' AS descricao,
            @valorRFEF AS valor,
-           '' AS classe,".
-            TipoValor::dinheiro()." AS tipoValor";
+           '' AS classe," .
+      TipoValor::dinheiro() . " AS tipoValor";
 
     $query = $this->db->query($sql);
     return $this->obterResultado($query);
+  }
+
+  private function obterValorEstoqueFinal($tipoEstoqueFinal, $valorEstoqueFinal) {
+    if($tipoEstoqueFinal == TipoEstoqueFinal::data()) {
+      $this->db->query("
+              SELECT (SELECT
+                  IFNULL(SUM(es7_total), 0) AS valor
+              FROM es7 
+              WHERE es7_data = @dataEstoqueFinal)
+              INTO @valorEstoqueFinal;");
+      return;
+    }
+
+    $this->db->query("SET @valorEstoqueFinal := ?", $valorEstoqueFinal);    
   }
 }
