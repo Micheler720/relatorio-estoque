@@ -1,5 +1,4 @@
 import * as Yup from 'yup';
-import { AxiosError } from "axios";
 
 
 interface ErrorMessages {
@@ -16,10 +15,6 @@ export interface FormErrors {
 
 interface ErrorMessages {
     messages: string[];
-}
-
-interface ErrorModel {
-    errors: ErrorMessages;
 }
 
 export default class FormService {

@@ -13,7 +13,8 @@ class DRE extends BaseController {
         'dataFinal' => 'required|valid_date[Y-m-d]',
         'tipoEstoqueFinal' => 'required|is_natural_no_zero',
         'dataInventarioEstoqueFinal' => 'valid_date[Y-m-d]',
-        'valorEstoqueFinal' => 'field_exists'
+        'valorEstoqueFinal' => 'field_exists',
+        'valorResultadoAnterior' => 'field_exists'
     ];
 
     public function getDRE(){
@@ -32,6 +33,7 @@ class DRE extends BaseController {
         $dataFinal = $validData['dataFinal'];
         $tipoEstoqueFinal = $validData['tipoEstoqueFinal'];
         $valorEstoqueFinal = $validData['valorEstoqueFinal'];
+        $valorResultadoAnterior = $validData['valorResultadoAnterior'];
 
         if(!$this->isDatesValid($dataInventarioEstoqueInicial, $dataInventarioEstoqueFinal)){
             $this->errors = [
@@ -60,7 +62,8 @@ class DRE extends BaseController {
             $dataInventarioEstoqueInicial, 
             $dataInventarioEstoqueFinal,
             $tipoEstoqueFinal,
-            $valorEstoqueFinal));
+            $valorEstoqueFinal,
+            $valorResultadoAnterior));
     }
 
     private function isDatesValid($initialDate, $endDate): bool

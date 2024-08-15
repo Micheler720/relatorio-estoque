@@ -12,7 +12,15 @@ class DREModel extends ModelBase
   protected $table = 'fn2';
   protected $allowedFields  = ['descricao', 'valor'];
 
-  public function getRelatorio($dataInicial, $dataFinal, $empresa, $dataEstoqueInicial, $dataEstoqueFinal, $tipoEstoqueFinal, $valorEstoqueFinal)
+  public function getRelatorio(
+    $dataInicial, 
+    $dataFinal, 
+    $empresa, 
+    $dataEstoqueInicial, 
+    $dataEstoqueFinal, 
+    $tipoEstoqueFinal, 
+    $valorEstoqueFinal,
+    $valorResultadoAnterior)
   {
 
     // Define as variáveis no banco de dados
@@ -230,7 +238,7 @@ class DREModel extends ModelBase
     //$this->db->query("SET @valorLucroLiquido = @valorTotalReceitas - @valorDemaisDespesas - @valorCustoMercadoriaVendida;");
     $this->db->query("SET @valorResultadoFinanceiro = @valorSaldoTesouraria + @valorSaldoCaixaPDV + @valorSaldoSicoob + @valorSaldoPIX + @valorContasAReceberClientes + @valorContasAReceberCartao  - @valorContasAPagar;");
     $this->db->query("SET @totalsaldo = @valorSaldoTesouraria + @valorSaldoCaixaPDV + @valorSaldoSicoob + @valorSaldoPIX;");
-    $this->db->query("SET @valorRFEF = @valorResultadoFinanceiro + @valorEstoqueFinal  ;");
+    $this->db->query("SET @valorRFEF = @valorResultadoFinanceiro + @valorEstoqueFinal + ".$valorResultadoAnterior."  ;");
     $this->db->query("SET @diferencaEstoque = @valorEstoqueFinal - @valorEstoqueInicial;");
     $this->db->query("SET @somaTotalMercadoria = @valorCompraRevenda + @valorTransferenciaMercadoria;");
     $this->db->query("SET @lucroTotal = @valorVendaBruta - @somaTotalMercadoria;");

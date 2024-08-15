@@ -35,6 +35,7 @@ interface FiltrosRelatorio {
   dataInventarioEstoqueFinal?: string;
   dataInventarioEstoqueInicial: string;
   valorEstoqueFinal?: string;
+  valorResultadoAnterior?: string;
   dataInicial: string;
   dataFinal: string;
   empresa: number;
@@ -148,9 +149,10 @@ function App() {
       const ano = formData.dataInicial.substring(0, 4);
       const mes = formData.dataInicial.substring(5, 7);
 
-      const { dataFinal, dataInicial, dataInventarioEstoqueFinal, dataInventarioEstoqueInicial, empresa, tipoEstoqueFinal, valorEstoqueFinal } = formData;
+      const { dataFinal, dataInicial, dataInventarioEstoqueFinal, dataInventarioEstoqueInicial, empresa, tipoEstoqueFinal, valorEstoqueFinal, valorResultadoAnterior } = formData;
 
       const valorEstoqueFinalNumero = Number(valorEstoqueFinal?.replace("R$ ", "").replace(".", "").replace(",", "."));
+      const valorResultadoAnteriorNumero = Number(valorResultadoAnterior?.replace("R$ ", "").replace(".", "").replace(",", "."));
 
 
       const response = await api.get(`DRE/getDRE?`
@@ -158,6 +160,7 @@ function App() {
         + `&dataInventarioEstoqueFinal=${dataInventarioEstoqueFinal}`
         + `&tipoEstoqueFinal=${tipoEstoqueFinal}`
         + `&valorEstoqueFinal=${valorEstoqueFinalNumero}`
+        + `&valorResultadoAnterior=${valorResultadoAnteriorNumero}`
         + `&empresa=${empresa}&dataInicial=${dataInicial}&dataFinal=${dataFinal}`);
 
       if (response.status !== 200) {
@@ -258,7 +261,7 @@ function App() {
                     row
                     name="tipoEstoqueFinal"
                     onChange={(event) =>{formService.setInputValue("tipoEstoqueFinal", Number(event.target.value))}}
-                    sx={{mb: 2}}
+                    sx={{mb: 1}}
                   >
                     <FormControlLabel checked={formData.tipoEstoqueFinal === TipoEstoqueFinal.Data} value={TipoEstoqueFinal.Data} control={<Radio />} label="Data" />
                     <FormControlLabel checked={formData.tipoEstoqueFinal === TipoEstoqueFinal.Valor} value={TipoEstoqueFinal.Valor} control={<Radio />} label="Valor" />
@@ -286,6 +289,16 @@ function App() {
                     />
                   }
                 </FormControl>
+
+                <AppCurrencyMaskedTextField 
+                  label="Valor Resultado Anterior"
+                  mask='999,99'
+                  name="valorResultadoAnterior"
+                  value={formData.valorResultadoAnterior}
+                  onChange={(event) => formService.setInputValue("valorResultadoAnterior", event.target.value)}
+                  errorMessage={formErrors['valorResultadoAnterior']}
+                  fullWidth
+                />
                 <Button variant="contained" sx={{ mt: 2 }} fullWidth={false} type='submit' >Buscar</Button>
               </Box>
             </form>
