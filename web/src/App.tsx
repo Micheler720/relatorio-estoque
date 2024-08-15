@@ -299,7 +299,7 @@ function App() {
                   errorMessage={formErrors['valorResultadoAnterior']}
                   fullWidth
                 />
-                <Button variant="contained" sx={{ mt: 2 }} fullWidth={false} type='submit' >Buscar</Button>
+                <Button variant="contained" fullWidth={false} type='submit' >Buscar</Button>
               </Box>
             </form>
             <AppErrorList errors={errors} />
