@@ -19,23 +19,20 @@ const formSchema = Yup.object({
   dataInventarioEstoqueInicial: Yup
     .date()
     .required('Obrigatório informar a data inicial do inventário.'),
-  dataInventarioEstoqueFinal: Yup
-    .date()
-    .min(Yup.ref('dataInventarioEstoqueFinal'), 'Data final do inventário deve ser maior que a data inicial')
-    .required('Obrigatório informar a data final do inventário.'),
   empresa: Yup
     .number()
     .required('Obrigatório informar a empresa.')
     .min(1, 'Obrigatório informar a empresa.'),  
-  mesAno: Yup
+  dataInicial: Yup
     .string()
-    .required('Obrigatório informar o mês e o ano para analíse.')
+    .required('Obrigatório informar a data inicial para obter o resultado.')
 });
 
 interface FiltrosRelatorio {
   dataInventarioEstoqueFinal: string;
   dataInventarioEstoqueInicial: string;
-  mesAno: string;
+  dataInicial: string;
+  dataFinal: string;
   empresa: number;
 }
 
@@ -49,7 +46,8 @@ interface Row {
 const filtroInicial: FiltrosRelatorio = {
   dataInventarioEstoqueInicial: getDateFormat(new Date()),
   dataInventarioEstoqueFinal: getDateFormat(new Date()),
-  mesAno: getDateFormat(new Date()),
+  dataInicial: getDateFormat(new Date()),
+  dataFinal: getDateFormat(new Date()),
   empresa: 0
 }
 
@@ -138,16 +136,20 @@ function App() {
 
     try {
 
+      console.log(formData);
+
       await formSchema.validate(formData, { abortEarly: false });
 
-      const ano = formData.mesAno.substring(0, 4);
-      const mes = formData.mesAno.substring(5, 7);
+      const ano = formData.dataInicial.substring(0, 4);
+      const mes = formData.dataInicial.substring(5, 7);
+
+      const { dataFinal, dataInicial, dataInventarioEstoqueFinal, dataInventarioEstoqueInicial, empresa } = formData;
       
 
       const response = await api.get(`DRE/getDRE?`
-        + `dataInventarioEstoqueInicial=${formData.dataInventarioEstoqueInicial}`
-        + `&dataInventarioEstoqueFinal=${formData.dataInventarioEstoqueFinal}`
-        + `&empresa=${formData.empresa}&mes=${mes}&ano=${ano}`);
+        + `dataInventarioEstoqueInicial=${dataInventarioEstoqueInicial}`
+        + `&dataInventarioEstoqueFinal=${dataInventarioEstoqueFinal}`
+        + `&empresa=${empresa}&dataInicial=${dataInicial}&dataFinal=${dataFinal}`);
 
       if (response.status !== 200) {
         throw response.data;
@@ -206,13 +208,21 @@ function App() {
               openMenu ? { display: "block" } : { display: "none" }}>
               <Box sx={{ gap: 4, m: 2, display: "flex", flexDirection: "column" }}>
                 <AppDatePicker
-                  label="Mês e Ano*"
-                  name="mesAno"                  
-                  value={moment(formData.mesAno)}
-                  views={['month', 'year']} 
-                  format="YYYY-MM"
-                  onChange={(date) => {console.log(formData.mesAno);  formService.setInputValue("mesAno", date?.format("YYYY-MM")); console.log(formData.mesAno);}}
-                  errorMessage={formErrors['mesAno']}
+                  label="Data Inicial"
+                  name="dataInicial"                  
+                  value={moment(formData.dataInicial)}
+                  format="DD-MM-YYYY"
+                  onChange={(date) => {formService.setInputValue("dataInicial", date?.format("YYYY-MM-DD"));}}
+                  errorMessage={formErrors['dataInicial']}
+                />
+
+                <AppDatePicker
+                  label="Data Final"
+                  name="dataFinal"                  
+                  value={moment(formData.dataFinal)}
+                  format="DD-MM-YYYY"
+                  onChange={(date) => {formService.setInputValue("dataFinal", date?.format("YYYY-MM-DD"));}}
+                  errorMessage={formErrors['dataFinal']}
                 />
 
                 <AppSelect

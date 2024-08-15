@@ -10,8 +10,8 @@ class DRE extends BaseController {
         'dataInventarioEstoqueInicial' => 'required|valid_date[Y-m-d]',
         'dataInventarioEstoqueFinal' => 'required|valid_date[Y-m-d]',
         'empresa' => 'required|is_natural_no_zero',
-        'mes' => 'required',
-        'ano' => 'required',
+        'dataInicial' => 'required|valid_date[Y-m-d]',
+        'dataFinal' => 'required|valid_date[Y-m-d]',
     ];
 
     public function getDRE(){
@@ -25,15 +25,23 @@ class DRE extends BaseController {
         $dataInventarioEstoqueInicial = $validData['dataInventarioEstoqueInicial'];
         $dataInventarioEstoqueFinal = $validData['dataInventarioEstoqueFinal'];
         $empresa = $validData['empresa'];
-        $mes = $validData['mes'];
-        $ano = $validData['ano'];
+        $dataInicial = $validData['dataInicial'];
+        $dataFinal = $validData['dataFinal'];
 
         if(!$this->isDatesValid($dataInventarioEstoqueInicial, $dataInventarioEstoqueFinal)){
+            $this->errors = [
+                'dataInventarioEstoqueInicial' => 'A data do inventário inicial não pode ser maior que a data final do inventário.'
+            ];
             return $this->badrequest_response($this->errors);
         }
 
-        $dataInicial = $ano."-".$mes."-01";
-        $dataFinal = $ano."-".$mes."-31";
+        if(!$this->isDatesValid($dataInicial, $dataFinal)){
+            $this->errors = [
+                'dataFinal' => 'A data do inicial não pode ser maior que a data final.'
+            ];
+            
+            return $this->badrequest_response($this->errors);
+        }
 
         $model = model('DREModel');        
         return  $this->success_response($model->getRelatorio(
@@ -47,11 +55,6 @@ class DRE extends BaseController {
     private function isDatesValid($initialDate, $endDate): bool
     {
         if($initialDate > $endDate){
-
-            $this->errors = [
-                'dataInventarioEstoqueInicial' => 'Data do invventário inicial não pode ser maior que a data final do inventário.'
-            ];
-
             return false;
         }
 
