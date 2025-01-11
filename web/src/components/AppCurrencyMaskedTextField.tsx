@@ -30,7 +30,7 @@ const defaultMaskOptions = {
   decimalSymbol: ',',
   decimalLimit: 2, // how many digits allowed after the decimal
   integerLimit: 10, // limit length of integer numbers
-  allowNegative: false,
+  allowNegative: true,
   allowLeadingZeroes: false,
 }
 
@@ -87,7 +87,7 @@ const AppCurrencyMaskedTextField: React.FC<FormTextFieldProps> = (props) => {
         <MaskedInput
           id={id}
           mask={currencyMask}
-          autoComplete='off'
+          autoComplete='off'   
           value={props.value}
           onChange={(e) => {
             if (rest.onChange) {
